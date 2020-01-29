@@ -1,0 +1,77 @@
+<ion-content>
+  <div  style="height:100vh">
+  <div id="header" class="d-flex " >
+    <div class="flex-fill bg-info" id="headerImg">
+      <div class="d-flex mt-4 " id="opacity">
+        <div class="d-flex ">
+          <div class="d-flex ">
+           <a class="pointer" routerLink="/home" routerLinkActive="active-link" id="backIcon"><i class="fa fa-arrow-left"  ></i>
+          </a>
+          <span id="back" >meets & seafood</span> 
+          </div>
+        </div>
+        <div class=" flex-grow-1 ">
+          <form class="form-group">
+            <div class="d-flex ">
+              <div id="input">
+                <input type="text" name="search"   >
+              </div>
+              <div id="searchButton">
+                <button type="submit" (click)="setFilterProducts()"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class=" pr-4 pl-2 pointer" (click)="goToCardDetails()" id="card">
+          <i  class="fa fa-shopping-cart">
+            <span id="cardDetalis">{{cartItemCount}}</span>
+          </i>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Start Search With Product -->
+  <div id="prdContent">
+  <div class="d-flex text-center" >
+    <div class="pt-3  pb-1 flex-fill">Meats</div>
+    <div class=" pt-3  pb-1 flex-fill">Fish</div>
+  </div>
+  <!-- End Search With Product -->
+
+  <br>
+  <!-- Start listOfProduct -->
+  <div class="d-flex flex-wrap "id="listOfProduct">
+    <div *ngFor="let prd of listOfProduct" id="product">
+      <img class="mx-auto d-block " id="list1" [src]="prd.product_img" (click)="showproduct(prd)">
+      <div class="d-flex">
+        <div class="pl-2 pt-1 d-inline-block" id="prdText">
+          <span #PrdName class="font-weight-bold">
+            {{prd.name}}
+          </span>
+          <p>
+            {{prd.weight}}
+            <br>
+            {{prd.price}}
+          </p>
+        </div>
+        <i style="font-size:0.7rem;width: 10%;height:7%;;border:2px solid rgb(218, 217, 217);margin-top: 26px;margin-left: 10px;border-radius: 50%;text-align: center"
+          [ngStyle]="{color:prd.isChecked? 'white':'rgb(141, 138, 138)',
+                        'background-color':prd.isChecked? 'rgb(252, 110, 105)':'rgb(231, 228, 228)',
+                        'border-color':prd.isChecked? 'rgb(252, 110, 105)':'rgb(218, 217, 217)'
+                        }"
+          [ngClass]="prd.isChecked? 'fa fa-check':'fas fa-plus'" (click)="AddToCard(prd)"></i>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- End listOfProduct -->
+  
+  <!-- Start Footer -->
+  <footer class="d-flex text-center ">
+    <div id="Sort">Sort by</div>
+    <div id="Filter">Filter</div>
+  </footer>
+  <!-- End Footer -->
+</div>
+</ion-content>

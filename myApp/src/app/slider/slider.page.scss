@@ -1,0 +1,37 @@
+ion-slides
+{
+  height: 100vh;
+}
+.card
+{
+  height:85%;
+  margin-top:15%;
+}
+.cardcontent
+{
+    font-size: 5vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top:20%;
+}
+.cardHeader
+{
+  height: 60%;
+}
+.SLiderImage
+{
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width:941px)
+{
+  
+  ion-card-title
+  {
+    font-size: 6vw;
+  }
+      
+  .cardcontent
+{
+    font-size: 4vw;
+}
+}

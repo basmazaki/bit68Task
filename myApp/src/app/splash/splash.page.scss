@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+.container-fluid
+{
+    background-color: rgb(252, 100, 95);
+    height: 100rem;
+}
+#content
+{
+    margin-top:12rem;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
+p{
+    font-size: 13vw;
+}
+i
+{
+    font-size: 7vw;  
+}
+.statusbar
+{
+    display: none;
+	margin: 0;
+	padding: 0;
+	top: 0;
+}
+// Responsive
+
+@media screen and (max-width: 480px) 
+{
+        div #content
+        {
+            margin-top:16rem;
+        }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px)
+{
+        div #content
+        {
+            margin-top:26rem;
+        }
+       
+}
+
+@media screen and (min-width: 769px) and (max-width: 940px)
+{
+        div #content
+        {
+            margin-top:26rem;
+        }
+       
+}
+
+@media screen and (min-width:941px)
+{
+    div #content
+        {
+            margin-top:39rem;
+        }
+}

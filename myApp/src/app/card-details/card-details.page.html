@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar> 
+      <div class="d-flex ">
+          <a routerLink="/list-of-products" routerLinkActive="active-link" id="backIcon"><i class="fa fa-arrow-left"  ></i>
+          </a>
+    <ion-title>All Products that you selected</ion-title>
+         
+        </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- Start listOfProduct -->
+<!-- <div class="d-flex flex-wrap mt-5 " style="font-size: 0.5rem;">
+    <div *ngFor="let prd of cardProductList" style="width:50%;height: 123px;">
+      <img class="mx-auto d-block " id="list1" [src]="prd.product_img" style="width:70%;height:60%" (click)="showproduct(prd)">
+      <div class="d-flex">
+        <div class="pl-4 pt-1 d-inline-block" style="width:80%;height:40%">
+          <span #PrdName class="font-weight-bold">
+            {{prd.name}}
+          </span>
+          <p>
+            {{prd.weight}}
+            <br>
+            {{prd.price}}
+          </p>
+        </div>
+       <button class="btn btn-danger" style="width:2rem;height:1rem;padding:0%;padding-top:0%;
+       padding-bottom:0%;font-size:.5rem;margin-top: 1rem;
+       margin-right:1rem" (click)="removeFromCard(prd)">remove</button>
+      </div>
+    </div>
+    <button class="btn btn-dark" style="font-size:0.8rem;
+       margin-left: 5rem" (click)="RemoveAllProducts()">RemoveAllProduct</button>
+  </div> -->
+  <!-- End listOfProduct -->
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Image </th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Price</th>
+        <th>Remove</th>
+        
+      </tr>
+      <tr *ngFor="let prd of cardProductList" >
+        <td > <img class="mx-auto d-block " [src]="prd.product_img" (click)="showproduct(prd)"></td>
+        <td class="td"> {{prd.name}}</td>
+        <td class="td"> {{prd.weight}}</td>
+        <td class="td"> {{prd.price}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeFromCard(prd)">remove</button>
+        </td>
+      </tr>
+  
+    </table>
+  </div>
+  <button class="btn btn-dark" (click)="RemoveAllProducts()">RemoveAllProduct</button>
+</ion-content>
